@@ -1,0 +1,11 @@
+- name: webserver
+  hosts: webserver
+  become: yes
+
+  tasks:
+  - name: install apache
+    command: apt install apache2 -y
+  
+  - name: start services
+    command: systemctl start apache2
+

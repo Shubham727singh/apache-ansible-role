@@ -1,0 +1,16 @@
+---
+# tasks file for apache2
+
+- name: Install Task
+  apt: name=apache2 state=present
+- name: Copy task
+  copy:
+    src: test.yml
+    dest: /opt
+- name: template task
+  template:
+    src: apache2.conf
+    dest: /etc/apache2/
+  notify:
+      - apache2 restart
+

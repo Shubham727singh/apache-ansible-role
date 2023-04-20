@@ -1,0 +1,11 @@
+---
+- name: test roles
+  hosts: all
+  become: yes
+  vars_prompt:
+           name: timeout
+           prompt: enter timout
+           private: no
+  roles: 
+     - apache2
+
